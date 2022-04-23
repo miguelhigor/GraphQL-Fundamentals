@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client"
+import { NewUserForm } from "./components/NewUserForm";
 
 type User = {
   id: string;
@@ -21,9 +22,12 @@ function App() {
     return <p>Loading...</p>
   }
   return (
-    <ul>
-      {data?.users.map(user => <li key={user.id}>{user.name}</li>)}
-    </ul>
+    <div>
+      <ul>
+        {data?.users.map(user => <li key={user.id}>{user.name}</li>)}
+      </ul>
+      <NewUserForm />
+    </div>
   );
 }
 
