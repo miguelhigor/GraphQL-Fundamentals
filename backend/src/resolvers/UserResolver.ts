@@ -1,10 +1,18 @@
-import { Query, Resolver } from "type-graphql";
+import { Mutation, Query, Resolver } from "type-graphql";
+import { User } from "../models/User";
 
 @Resolver()
 export class UserResolver {
+    private data: User[] = [];
 
-    @Query(() => String)
-    async helloWorld() {
-        return "Hello World";
+    @Query(() => [User])
+    async users() {
+        return this.data;
     }
+
+    @Mutation(() => User)
+    async createUser(user: User) {
+        this.data.push(user);
+    }
+
 }

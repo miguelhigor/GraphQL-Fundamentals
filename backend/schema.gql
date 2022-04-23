@@ -3,6 +3,15 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Mutation {
+  createUser: User!
+}
+
 type Query {
-  helloWorld: String!
+  users: [User!]!
+}
+
+type User {
+  id: ID!
+  name: String!
 }
