@@ -2,6 +2,7 @@ import "reflect-metadata";
 import path from 'path';
 import { buildSchema } from 'type-graphql';
 import { ApolloServer } from "apollo-server";
+
 import { UserResolver } from "./src/resolvers/UserResolver";
 
 async function main() {

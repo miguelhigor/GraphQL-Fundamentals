@@ -1,5 +1,6 @@
-import { Mutation, Query, Resolver } from "type-graphql";
+import { Arg, Mutation, Query, Resolver } from "type-graphql";
 import { User } from "../models/User";
+import { v4 as uuidV4 } from 'uuid';
 
 @Resolver()
 export class UserResolver {
@@ -11,8 +12,17 @@ export class UserResolver {
     }
 
     @Mutation(() => User)
-    async createUser(user: User) {
+    async createUser(
+        @Arg('name') name: string,
+    ) {
+        const id = uuidV4();
+        const user = {
+            id,
+            name
+        }
+
         this.data.push(user);
+        return user;
     }
 
 }
