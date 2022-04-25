@@ -16,7 +16,6 @@ async function main() {
     });
 
     const { url } = await server.listen();
-
     console.log(`Server is running on ${url}`);
 }
 

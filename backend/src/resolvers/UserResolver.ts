@@ -1,6 +1,7 @@
 import { Arg, Mutation, Query, Resolver } from "type-graphql";
-import { User } from "../models/User";
 import { v4 as uuidV4 } from 'uuid';
+
+import { User } from "../models/User";
 
 @Resolver()
 export class UserResolver {

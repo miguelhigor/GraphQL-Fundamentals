@@ -14,7 +14,10 @@ const CREATE_USER = gql`
 
 export function NewUserForm() {
     const [name, setName] = useState('');
-    const [createUser, { data, loading, error }] = useMutation(CREATE_USER);
+    const [
+        createUser,
+        { data, loading, error }
+    ] = useMutation(CREATE_USER);
 
     async function handleCreateUser(event: FormEvent) {
         event.preventDefault();
@@ -52,5 +55,5 @@ export function NewUserForm() {
             <input type="text" value={name} onChange={e => setName(e.target.value)} />
             <button type="submit">Send</button>
         </form>
-    )
+    );
 }

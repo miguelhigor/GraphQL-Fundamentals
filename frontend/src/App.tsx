@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client"
+import { gql, useQuery } from "@apollo/client";
 import { NewUserForm } from "./components/NewUserForm";
 
 type User = {
@@ -31,4 +31,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
